@@ -7,7 +7,6 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
 
-
 public class Q11Battle {
 	public static void main(String[] args) {
 		Player strongPlayer = new StrongPlayer("StrongPlayer",50, 4);
@@ -59,8 +58,12 @@ public class Q11Battle {
 				System.out.println("start match between "+playerList.get(j-1).name+" "+playerList.get(j).name+" ?(yes/no)");
 				String enter = scanner.nextLine();
 				if(enter.equalsIgnoreCase("yes")) {
+					long startTime = System.nanoTime();
 					playerObj[count] = fight(playerList.get(j-1), playerList.get(j));
 					count ++;
+					long stopTime = System.nanoTime();
+					System.out.println("Game Duration: "+(stopTime - startTime)+" nanoseconds");
+					
 				}else {
 					break;
 				}
@@ -74,7 +77,12 @@ public class Q11Battle {
 					String enter = scanner.nextLine();
 					if(enter.equalsIgnoreCase("yes")) {
 						System.out.println(" ============== Final Match ============  " );
-						System.out.println(fight(playerObj[0], playerObj[1]).health+" health");
+						long startTime = System.nanoTime();
+//						System.out.println(fight(playerObj[0], playerObj[1]).health+" health");
+						fight(playerList.get(j-1), playerList.get(j));
+						
+						long stopTime = System.nanoTime();
+						System.out.println("Game Duration: "+(stopTime - startTime)+" nanoseconds");
 						System.out.println("=====Thanks===== ");
 					}
 				}
