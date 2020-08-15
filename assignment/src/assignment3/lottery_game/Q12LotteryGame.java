@@ -14,7 +14,6 @@ public class Q12LotteryGame {
 				System.out.println(lotteryPlayer.get(i).list.get(j));
 			}
 		}
-		
 		while(bool) {
 			for(int i =0;i<lotteryPlayer.size();i++) {// player object
 				int rand=new Random().nextInt(1000);
@@ -32,12 +31,8 @@ public class Q12LotteryGame {
 				}
 			}
 		System.out.println("Count of picked number : "+countPick);
-//		System.out.println("Printing Remaining Array Size");
-//		for(int i =0;i<lotteryPlayer.size();i++) {
-//			System.out.println(lotteryPlayer.get(i).list.size()+" "+lotteryPlayer.get(i).name);
-//		}
-
 	}
+	
     public static void main(String[] args) {
     	Q12LotteryGame q12 = new Q12LotteryGame();
     	long startTime = System.nanoTime();
