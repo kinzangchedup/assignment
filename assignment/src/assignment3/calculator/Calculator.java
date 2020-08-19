@@ -7,11 +7,12 @@ public class Calculator {
 		 String multiply = "";
 		 String add = "";
 		 String subtract = "";
+		 System.out.println(expression+" Expr");
 		 bracket= divide= multiply = add = subtract = expression;
-		 if(divide.contains("(")) {
-			 bracket=divide= multiply = add = subtract = new Calculator().bracket(bracket);
-			}
-		 if(divide.contains("/")) {
+		if(divide.contains("(")) {
+			bracket=divide= multiply = add = subtract = new Calculator().bracket(bracket);
+		}
+		if(divide.contains("/")) {
 			divide= multiply = add = subtract = new Calculator().divide(divide);
 		}
 		if (multiply.contains("*")) {
